@@ -1,0 +1,10 @@
+.userbox{
+    box-sizing: border-box;
+    border: 1px solid #333;
+}
+.statusmsg{
+    text-align: center;
+    color: #009720;
+    font-weight: 500;
+    font-size: 20px;
+}

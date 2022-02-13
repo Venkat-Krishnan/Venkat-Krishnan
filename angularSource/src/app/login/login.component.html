@@ -1,0 +1,124 @@
+
+
+<span *ngIf="currentView=='login'">
+    <div class="outer">
+        <div class="center">
+          <div class="forms">
+            <h3>Sign In</h3>
+            <hr />
+            <form name="signIn">
+              <div class="form-group">
+                <label for="inputEmail" style="padding-bottom: 5px;">Email</label>
+                <input type="email" name="myEmail"  style="padding-bottom: 5px;" class="form-control" placeholder="Email" required [(ngModel)]="email" />
+                <span class="error"  id="errorname"></span>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword" style="padding-top: 10px; padding-bottom: 5px;">Password</label>
+                <input type="password" name="myPassword" class="form-control" placeholder="Password" required  [(ngModel)]="password" />
+                <span class="error"  id="errorname1"></span>
+              </div>
+    
+              <a class="btn btn-primary bttn" role="button" (click)="login()" >Login</a> <hr />
+              <span>Don't have an account yet?<button type="button" style="padding-top: 2px;" class="btn btn-link" (click)="currentView='signup'">Signup</button></span>
+              <button type="button" style="padding-left: 0px;" class="btn btn-link" (click)="currentView='forgot'">Forgot Password?</button>
+    
+            </form>
+    
+          </div>
+    
+        </div>
+    
+      </div>
+    
+</span>
+
+<span *ngIf="currentView=='signup'">
+    
+  <div class="outer">
+    <div class="center">
+      <div class="forms">
+        <h3>Sign Up</h3>
+        <hr />
+        <form name="signUp" class="add">
+          <div class="form-group">
+            <label for="inputEmail">Enter Email</label>
+            <input type="email" name="newEmail" id="newEmail" class="form-control" placeholder="Email" required  [(ngModel)]="email">
+            <span class="error"  id="errorname"></span>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Enter Password</label>
+            <input type="password" name="newPassword" id="newPassword" class="form-control" placeholder="Password" required  [(ngModel)]="password">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Re-Enter Password</label>
+            <input type="password" name="rePassword" class="form-control" placeholder="Re-Enter Password" required  [(ngModel)]="repass">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Enter Secret Code</label>
+            <input type="password" name="scode" id="scode" class="form-control" placeholder="Code" required  [(ngModel)]="secret">
+          </div>
+
+
+<a class="btn btn-primary bttn" role="button" name = "signup" id = "signup" (click)="signup()">Signup</a>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</span>
+<span *ngIf="currentView=='forgot'">
+    
+  <div class="outer">
+    <div class="center">
+      <div class="forms">
+        <h3>Forgot Password</h3>
+        <hr />
+        <form name = "fPass">
+          <div class="form-group">
+            <label for="inputEmail">Enter Email</label>
+            <input type="email"  name ="myEmail" class="form-control" placeholder="Email" required  [(ngModel)]="email">
+            <span class="error"  id="errorname"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="inputPassword">Enter Secret Code</label>
+            <input type="password" name ="scode" class="form-control"  placeholder="Code" required  [(ngModel)]="secret">
+          </div>
+
+<a class="btn btn-primary bttn" role="button" (click)="forgotpass()">Submit</a>
+        </form>
+
+      </div>
+
+    </div>
+</div>
+</span>
+<span *ngIf="currentView=='reset'">
+    
+  <div class="outer">
+    <div class="center">
+      <div class="forms">
+        <h3>Password Reset</h3>
+        <hr />
+        <form name="pReset">
+          <div class="form-group">
+            <label for="inputPassword">Enter New Password</label>
+            <input type="password"  name = "npassword" class="form-control" placeholder="New Password" required  [(ngModel)]="password">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Re-Enter Password</label>
+            <input type="password"  name = "rpassword" class="form-control" placeholder="Re-Enter Password" required  [(ngModel)]="repass"> 
+          </div>
+
+<a class="btn btn-primary bttn" role="button" (click)="resetpass()">Submit</a>
+        </form>
+
+      </div>
+
+    </div>
+
+</div>
+</span>
